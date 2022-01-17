@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Date;
 
 import db.DB;
 import modelo.entidade.Department;
+import modelo.entidade.Seller;
 
 public class Principal {
 
@@ -29,7 +31,8 @@ public class Principal {
 			*/
 			
 			Department obj1 = new Department(1, "Books");
-			System.out.println(obj1);
+			Seller sel = new Seller(21, "Bob", "bob@gmail.com", new Date(), 3000.0, obj1);
+			System.out.println(sel);
 			
 			
 		}
