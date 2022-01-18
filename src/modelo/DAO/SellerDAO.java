@@ -22,3 +22,5 @@ public interface SellerDAO {
 	List<Seller> findAll();
 
 }
+
+

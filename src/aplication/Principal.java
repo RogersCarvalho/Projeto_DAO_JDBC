@@ -7,6 +7,9 @@ import java.sql.Statement;
 import java.util.Date;
 
 import db.DB;
+import modelo.DAO.DaoFactory;
+import modelo.DAO.SellerDAO;
+import modelo.DAO.Impl.SellerDaoJDBC;
 import modelo.entidade.Department;
 import modelo.entidade.Seller;
 
@@ -14,36 +17,11 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		Connection conn = null;
-		Statement st = null;
-		ResultSet rs = null;
-		try {
-			
-			
-			conn = DB.getConnection();
-	        st = conn.createStatement();
-	        
-	        
-			/*rs = st.executeQuery("select * from department");
-			while (rs.next()) {
-				System.out.println(rs.getInt("Id") + ", " + rs.getString("Name"));
-			}
-			*/
-			
-			Department obj1 = new Department(1, "Books");
-			Seller sel = new Seller(21, "Bob", "bob@gmail.com", new Date(), 3000.0, obj1);
-			System.out.println(sel);
-			
-			
-		}
-		catch (SQLException e) {
-			e.printStackTrace();
-		}
-		finally {
-			DB.closeResultSet(rs);
-			DB.closeStatement(st);
-			DB.closeConnection();
-		}
-	}
-
+	     			
+		    SellerDAO sellerDaoJDBC = DaoFactory.createSellerDao();
+	        Seller seller = sellerDaoJDBC.findById(3);
+		    System.out.println(seller);
+		    
+		    
+   }
 }
