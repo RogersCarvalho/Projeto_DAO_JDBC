@@ -22,17 +22,19 @@ public class Principal {
 		    SellerDAO sellerDaoJDBC = DaoFactory.createSellerDao();
 		
 		
-		    //System.out.println("\n=== TEST 1: findById =======");
-		   // Seller seller = sellerDaoJDBC.findById(3);
-		    //System.out.println(seller);
+		    /*
+		    System.out.println("\n=== TEST 1: findById =======");
+		    Seller seller = sellerDaoJDBC.findById(3);
+		    System.out.println(seller);
+		    */
 		    
 		    
-		    //System.out.println("\n=== TEST 2: findByDepartment =====");
-			//Department department = new Department(2, null);
-			//List<Seller> list = sellerDaoJDBC.findByDepartment(department);
-			//for (Seller obj : list) {
-				//System.out.println(obj);
-			//}
+		    System.out.println("\n=== TEST 2: findByDepartment =====");
+			Department department = new Department(2, null);
+			List<Seller> list = sellerDaoJDBC.findByDepartment(department);
+			for (Seller obj : list) {
+				System.out.println(obj);
+			}
 		    
 		    
 		    
