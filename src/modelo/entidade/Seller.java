@@ -24,6 +24,7 @@ public class Seller implements Serializable {
 		this.birthDate = birthDate;
 		this.baseSalary = baseSalary;
 		this.department = department;}
+   
     //Getters e Setters
 	public Integer getId() {return id;}
     public void setId(Integer id) {this.id = id;}
@@ -35,6 +36,7 @@ public class Seller implements Serializable {
     public void setBirthDate(Date birthDate) {this.birthDate = birthDate;}
     public Double getBaseSalary() {	return baseSalary;}
     public void setBaseSalary(Double baseSalary) {this.baseSalary = baseSalary;}
+   
     public Department getDepartment() {return department;}
     public void setDepartment(Department department) {this.department = department;}
 

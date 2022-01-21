@@ -20,6 +20,9 @@ public class Principal {
 
 	     	
 		    SellerDAO sellerDaoJDBC = DaoFactory.createSellerDao();
+
+		   
+		    
 		    /*
 		    //System.out.println("\n=== TEST 1: findById =======");
 		    Seller seller = sellerDaoJDBC.findById(3);
@@ -35,12 +38,29 @@ public class Principal {
 			}
 		    */
 		    
-		    
-		    System.out.println("\n=== TEST 3: seller findAll =====");
+		    /*
+		    //System.out.println("\n=== TEST 3: seller findAll =====");
 		    List<Seller> list = sellerDaoJDBC.findAll();
 			for (Seller obj : list) {
 				System.out.println(obj);
-			}
+			}*/
+
+		    
+		    
+		    //System.out.println("\n=== TEST 4: seller insert =====");
+		    Department department = new Department(2, null);
+		    Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, department);
+		    sellerDaoJDBC.insert(newSeller);
+			System.out.println("Inserted! New id = " + newSeller.getId());
+
 
      }
 }
+
+
+   
+
+
+
+
+
