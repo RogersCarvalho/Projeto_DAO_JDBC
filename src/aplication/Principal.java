@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import db.DB;
 import modelo.DAO.DaoFactory;
@@ -18,14 +19,17 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-	     	SellerDAO sellerDaoJDBC = DaoFactory.createSellerDao();
+	     	Scanner sc = new Scanner(System.in);
+		    SellerDAO sellerDaoJDBC = DaoFactory.createSellerDao();
 
-		    System.out.println("\n=== TEST 5: seller update =====");
-		    
-		    Seller s = sellerDaoJDBC.findById(1);
-		    s.setName("Martha Waine");
-		    sellerDaoJDBC.update(s);
-		    System.out.println("Update completed");
+		    System.out.println("\n=== TEST 6: seller delete =====");
+			
+		    System.out.println("Enter id for delete test: ");
+			int id = sc.nextInt();
+			sellerDaoJDBC.deleteById(id);
+			System.out.println("Delete completed");
+			
+			sc.close();
 		    
      }
 }

@@ -20,7 +20,10 @@ import modelo.entidade.Seller;
 public class SellerDaoJDBC implements SellerDAO{
 
 	private Connection conn;
-	public SellerDaoJDBC(Connection conn) {this.conn = conn;}
+	
+	public SellerDaoJDBC(Connection conn) {
+		this.conn = conn;
+		}
 
 	
 	//Método para buscar todos os dados de um vendedor especifico-------------------------
@@ -216,6 +219,7 @@ public class SellerDaoJDBC implements SellerDAO{
 	}
 
 	
+	
 	//Método para excluir um Seller(vendedor)--------------------------------------------
 	@Override
 	public void deleteById(Integer id) {
@@ -235,11 +239,14 @@ public class SellerDaoJDBC implements SellerDAO{
 		}
 	}
 	
-	
-	
-	
-
-
-	
 
 }
+
+
+
+
+
+
+
+
+
